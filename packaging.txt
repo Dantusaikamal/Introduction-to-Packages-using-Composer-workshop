@@ -1,0 +1,61 @@
+Hey, everyone. This is Sai kamal from BIET. This session will mainly focus on the hands-on part of Packaging Ecosystems and Dependency Managers. 
+
+You might have seen the recordings of previous sessions on packaging ecosystems by Harisai, Raja and Vishwanath already right? Have you? Just confirm in the public chat if you saw the recordings.
+
+Before starting the hands-on session, let us take a couple of minutes and just revisit few key takeaways of the previous sessions. 
+ 
+Now how many of you know about packages? If you have studied Java, you might have heard about packages in Java.
+
+A package is a piece of reusable code that can be dropped into any application and be used without any tinkering to add functionality to that code.
+
+If you have developed a react application, you might have used a package.json file in which you mentioned the list of packages also called as node modules. 
+
+
+Now the entire point of having these packages is that you should be able to reuse code that has been already written for specific purposes. 
+
+On the topic of packages, let us also talk about package managers. Since we are dealing with installation of packages, adding dependencies, we would want something to manage those dependencies. This is where package managers or dependency managers come into action.  
+
+What is the difference between a package and a dependency? 
+Once you install any package using npm or composer or Pip then the package is installed as a dependency in your app inside your package. json file or composer.json file.
+
+
+Also where do these package managers get those packages from? 
+If you install a package in Python using Pip, pip will get your package by default from PyPi (Python Package Index). It is a repository that contains a lot of packages. Similarly, Composer will install your dependecies from a repository called packagist.
+
+Packagist#
+
+Packagist.org is the main Composer repository. A Composer repository is basically a package source: a place where you can get packages from. Packagist aims to be the central repository that everybody uses. This means that you can automatically require any package that is available there, without further specifying where Composer should look for the package.
+
+If you go to the Packagist.org website, you can browse and search for packages.
+
+
+
+Composer introduction:
+
+To start using Composer in your project, all you need is a composer.json file. This file describes the dependencies of your project and may contain other metadata as well. It typically should go in the top-most directory of your project/VCS repository. You can technically run Composer anywhere but if you want to publish a package to Packagist.org, it will have to be able to find the file at the top of your VCS repository.
+
+The require key:
+
+The first thing you specify in composer.json is the require key. You are telling Composer which packages your project depends on.
+
+{
+    "require": {
+        "monolog/monolog": "2.0.*"
+    }
+}
+
+As you can see, require takes an object that maps package names (e.g. monolog/monolog) to version constraints (e.g. 1.0.*).
+
+Composer uses this information to search for the right set of files in package "repositories" that you register using the repositories key, or in Packagist.org, the default package repository. In the above example, since no other repository has been registered in the composer.json file, it is assumed that the monolog/monolog package is registered on Packagist.org. (See more about Packagist below, or read more about repositories here).
+
+
+
+How does composer work?
+
+When you specify a dependency in composer.json, Composer first takes the name of the package that you have requested and searches for it in any repositories that you have registered using the repositories key. If you have not registered any extra repositories, or it does not find a package with that name in the repositories you have specified, it falls back to Packagist.org (more below).
+
+When Composer finds the right package, either in Packagist.org or in a repo you have specified, it then uses the versioning features of the package's VCS (i.e., branches and tags) to attempt to find the best match for the version constraint you have specified. 
+
+
+
+
