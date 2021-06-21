@@ -58,4 +58,15 @@ When Composer finds the right package, either in Packagist.org or in a repo you 
 
 
 
+composer require <package name>
 
+cat composer.json (to view composer.json content) 
+
+sudo nano filename.php 
+And enter code in PHP to use the package 
+
+php composer_sample.php
+
+composer update
+
+https://fsmi.wiki/index.php/User:Ranjithraj/installers/moodle
