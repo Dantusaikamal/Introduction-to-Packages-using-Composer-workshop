@@ -22,7 +22,7 @@ Once you install any package using npm or composer or Pip then the package is in
 Also where do these package managers get those packages from? 
 If you install a package in Python using Pip, pip will get your package by default from PyPi (Python Package Index). It is a repository that contains a lot of packages. Similarly, Composer will install your dependecies from a repository called packagist.
 
-Packagist#
+Packagist:
 
 Packagist.org is the main Composer repository. A Composer repository is basically a package source: a place where you can get packages from. Packagist aims to be the central repository that everybody uses. This means that you can automatically require any package that is available there, without further specifying where Composer should look for the package.
 
